@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://psi-proxi.github.io/sitemap.xml 
