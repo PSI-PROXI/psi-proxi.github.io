@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Proxi | PROXI]]></title>
   <link href="http://psi-proxi.github.io/blog/categories/proxi/atom.xml" rel="self"/>
   <link href="http://psi-proxi.github.io/"/>
-  <updated>2015-02-02T23:14:29+00:00</updated>
+  <updated>2015-02-03T15:30:22+00:00</updated>
   <id>http://psi-proxi.github.io/</id>
   <author>
     <name><![CDATA[ProteomeXchange Consortium]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PROXI Use Cases]]></title>
+    <link href="http://psi-proxi.github.io/blog/2015/02/03/proxi-use-cases/"/>
+    <updated>2015-02-03T14:38:09+00:00</updated>
+    <id>http://psi-proxi.github.io/blog/2015/02/03/proxi-use-cases</id>
+    <content type="html"><![CDATA[<p>The following use cases have driven the development of the PROXI and are used to define the scope of the system:</p>
+
+
+
+
+<ul> 
+ <li> PROXI should be simple and robust enough to make accessible data from disparate resources using simple tab-separated file format and JSON objects. This should facilitate the sharing of data beyond the borders
+      of the proteomics field and make it more accessible to non-experts.</li>
+
+ <li> There should be sufficient information stored in the output to facilitate data comparison, exchange and (limited) verification of protein expression information.</li>
+
+ <li> The system will provide two different views of the data available: (i) dataset view, (ii) aggregated view. The dataset is an “experimental unit” oriented view (e.g. a MS-run for a MS-based proteomics experiment).
+      The aggregated view can be considered as a condensed way to access different experiments or assays, keeping the protein as the central point of aggregation.</li>
+       
+ <li> It should be possible to export results of a protein expression experiment in a single file, including identification and quantification results. It should be also possible to save both the dataset and aggregated
+      outputs in the same output.</li>
+       
+ <li> It should be flexible enough to be able to capture other expression information such as: antibody-based protein experimental information.</li>
+ 
+ <li> It should be defined a common query language (PXQL), a way to allow more powerful and flexible queries by using a specific syntax when doing the searches.</li>
+
+ <li> It will standardize the way of exchanging expression data from spectra information to quantitative values, including post-translational modifications, sample metadata, etc.</li>
+
+ <li> It will define a common API to exchange Protein Expression data including a reference implementation to be use for those groups without bioinformatics supports. 
+ 
+ <li> It should be possible to implement of standard REST web services and a service registry containing a well-defined list of methods following the PROXI API </li>
+ 
+ <li> The existence of an open-source reference implementation for PROXI should allow the straightforward setup of a local server for protein expression data in a feasible way. The PROXI project site should offer open-source
+      client libraries and code examples for software developers.</li>
+</ul>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About PROXI]]></title>
@@ -23,10 +64,11 @@
      made available in public proteomics repositories such as <a href="http://www.ebi.ac.uk/pride/archive/">PRIDE</a> , <a href="http://http://gpmdb.thegpm.org/">GPMDB</a> and <a href="http://www.peptideatlas.org/">PeptideAtlas</a>. 
      In addition, protein expression information can be accessed in other resources like the antibody-based <a href="http://www.proteinatlas.org/">Human Protein Atlas</a> and protein knowledge bases such as
      <a href="http://www.uniprot.org/">UniProt</a> or <a href="http://www.nextprot.org/">neXtProt</a>. At present, scientists need to access the different proteomics resources when they want to get all existing information about a given protein. The alternative is to access knowledge
-     bases such as UniProt or neXtProt, but the amount of data coming from MS proteomics repositories in these resources is still limited. The main goal behind the development of PROXI is to support researchers by making possible a distributed
-     search of protein expression data through heterogeneous resources like the ones outlined above, among others. The idea is to enable a biological-centric distributed search taking into account sample related metadata such as location
+     bases such as UniProt or neXtProt, but the amount of data coming from MS proteomics repositories in these resources is still limited. 
+     <blockquote> The main goal behind the development of PROXI is to support researchers by making possible a distributed search of protein expression data through heterogeneous resources like the ones outlined above, among others. The idea is to enable a biological-centric distributed search taking into account sample related metadata such as location
      (e.g. tissue, cell type) and level of expression, detection in disease states, etc. The basic idea is then to provide a common entry point for showing information coming from different data resources. Apart from these resources,
      the PROXI framework is expected to be used by other third-party applications, e.g. proteomes browsers such as <a href="http://www.proteomebrowser.org/tpb/home.jspx">&#8220;The Proteome Browser”</a> or lab-centric resources. 
+     </blockquote>
 </p>
 
 
@@ -38,12 +80,22 @@
 </p>
 
 
+
+
 <p><b>(i) Dataset View</b>: It is an experiment, assay or MS-run (in the case of MS-based proteomics) oriented view. This approach provides the information of one “experimental unit” meaning that no data aggregation process was applied.</p>
+
+
+
 
 <p><b>(ii) Aggregated View</b>: It can be considered as the result of the aggregation of different experiments, assays or MS-runs (in the case of MS-based proteomics), using the protein as the central point for the aggregation.
 For example, PeptideAtlas allows the users to retrieve the information for a specific protein identified in different experiments.</p>
 
+
+
+
 <p>PROXI will be developed with the following main general tasks in mind:</p>
+
+
 
 
 <p>  <b> T1. </b> Integrate protein and peptide expression information from the current MS proteomics resources such as PeptideAtlas, <a href="http://www.ebi.ac.uk/pride/archive/">PRIDE</a>, <a href="http://http://gpmdb.thegpm.org/">GPMDB</a>,
@@ -54,6 +106,7 @@ For example, PeptideAtlas allows the users to retrieve the information for a spe
   <b> T4. </b> Enable the export of the results in a single tabular file format or by using JSON (JavaScript Object Notation) objects. </br>
   <b> T5. </b> Define a common query language (PXQL) as a way to enable more powerful and flexible queries, by using a specific syntax. </br>
   <b> T6. </b> Implement a standard REST web service and a service registry containing a defined list of well-documented methods. </br></p>
+
 ]]></content>
   </entry>
   
