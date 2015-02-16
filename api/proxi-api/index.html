@@ -162,6 +162,119 @@ data providers and consumers to better share proteomics data and work together o
 <p></br>
 <img src="/images/proxi.png" />
 </br></p>
+
+<p></br></br></p>
+
+<p>This v0.0.1 of the PROXI API has been developed using JSON schema to model the data. The documentation presented here is provided as a freely available blueprint for software developers to take and implement alongside those already at
+the ProteomeXchamge partners.</p>
+
+<p>The PROXI model comprises two main views for each resource an <strong>aggregated</strong> or <strong>dataset</strong>.</p>
+
+<p></br></p>
+
+<h4> The aggregated view </h4>
+
+
+<p>It can be considered as the result of the aggregation of different experiments, assays or MS-runs (in the case of MS-based proteomics), using the protein as the central point for the aggregation.
+For example, <a ref="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProtein?protein_name=Q13740&apply_action=QUERY">PeptideAtlas</a> allows the users to retrieve the information for a specific
+protein identified in different experiments. </br></p>
+
+<p><strong>Aggregated</strong> view is the most widely used view for all the protein expression resources such as <strong>MOPED</strong>, <strong>GPMDB</strong>, <strong>CPTAC Assay Portal</strong> amount others. If proteins are not present (e.g. peptide oriented resource),
+the central view can be the peptides.</p>
+
+<p></br></p>
+
+<h4> The dataset view </h4>
+
+
+<p>The dataset view is close the the model view in <a href="http://rest.thegpm.org/1/model/proteins/gpm=GPM10100159682">GPMDB</a>. The dataset view is a project oriented view of each biological entity such as
+proteins, peptides, modifications. The dataset view enables to share data on specific projects opening the possibilities for each resources for re-analisis, data sharing and validation of the original
+results.</p>
+
+<p><strong>Dataset</strong> view is widely used in those resources such as MassIVE and PRIDE Archive that provides original datasets. </br></br></br></br></br></p>
+
+<h4 class="entry-title centered">Common URL syntax</h4>
+
+
+<div class="border"></div>
+
+
+<p></br></p>
+
+<p></br></p>
+
+<p class="centered">
+<img src="/images/root_url.png" />
+</p>
+
+
+<p></br></p>
+
+<p>The first element of the URL is, of course, the location of the web service. The resource could have they own name, for best practice we suggest to finalize the name of the resource with proxi (
+the peptide atlas example). Different resources can have their own web service and representation to access to their data and PROXI can be another view of these resources.
+The structure (<strong>resource/proxi/</strong>) allows an standardized url that will highlight to the end end-user that they are using the PROXI view and API of the resource. </br></br></p>
+
+<h4>VERSION</h4>
+
+
+<p>It is a common practice to have different specifications of the same API running in the same server. The PROXI implementation provide a versioning system that every resource can use for
+this purpose. With time, more versions might exist. The possible values for this bit are:</br></br></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> Version       </th>
+<th></th>
+<th style="text-align:right;">      Description                            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td> v1.0          </td>
+<td></td>
+<td style="text-align:right;"> Build 1.0 of Human database                 </td>
+</tr>
+<tr>
+<td></td>
+<td> v2.0          </td>
+<td></td>
+<td style="text-align:right;"> Build 1.0 of Human database                 </td>
+</tr>
+<tr>
+<td></td>
+<td> current       </td>
+<td></td>
+<td style="text-align:right;"> Will map always to the most current version </td>
+</tr>
+</tbody>
+</table>
+
+
+<p></br></br></p>
+
+<p>For <strong>Aggregated</strong> view all the information is provided from the root of the resource:</p>
+
+<p></br></p>
+
+<p class="centered">
+<img src="/images/root_url_aggregated.png" />
+</p>
+
+
+<p></br></p>
+
+<p>For <strong>dataset</strong> view all the information is provided from the root of the resource:</p>
+
+<p></br></p>
+
+<p class="centered">
+<img src="/images/root_url_dataset.png" />
+</p>
+
+
+<p></br></p>
 </div>
 
 
