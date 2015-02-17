@@ -168,23 +168,25 @@ data providers and consumers to better share proteomics data and work together o
 <p>This v0.0.1 of the PROXI API has been developed using JSON schema to model the data. The documentation presented here is provided as a freely available blueprint for software developers to take and implement alongside those already at
 the ProteomeXchamge partners.</p>
 
-<p>The PROXI model comprises two main views for each resource an <strong>aggregated</strong> or <strong>dataset</strong>.</p>
+<p>The PROXI model comprises different views for each resource:
+   - <strong>Protein</strong>
+   - <strong>Dataset</strong></p>
 
 <p></br></p>
 
-<h4> The aggregated view </h4>
+<h4> Protein View </h4>
 
 
 <p>It can be considered as the result of the aggregation of different experiments, assays or MS-runs (in the case of MS-based proteomics), using the protein as the central point for the aggregation.
 For example, <a ref="https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/GetProtein?protein_name=Q13740&apply_action=QUERY">PeptideAtlas</a> allows the users to retrieve the information for a specific
 protein identified in different experiments. </br></p>
 
-<p><strong>Aggregated</strong> view is the most widely used view for all the protein expression resources such as <strong>MOPED</strong>, <strong>GPMDB</strong>, <strong>CPTAC Assay Portal</strong> amount others. If proteins are not present (e.g. peptide oriented resource),
+<p><strong>Protein</strong> view is the most widely used view for all the protein expression resources such as <strong>MOPED</strong>, <strong>GPMDB</strong>, <strong>CPTAC Assay Portal</strong> amount others. If proteins are not present (e.g. peptide oriented resource),
 the central view can be the peptides.</p>
 
 <p></br></p>
 
-<h4> The dataset view </h4>
+<h4> Dataset View</h4>
 
 
 <p>The dataset view is close the the model view in <a href="http://rest.thegpm.org/1/model/proteins/gpm=GPM10100159682">GPMDB</a>. The dataset view is a project oriented view of each biological entity such as
@@ -210,9 +212,8 @@ results.</p>
 
 <p></br></p>
 
-<p>The first element of the URL is, of course, the location of the web service. The resource could have they own name, for best practice we suggest to finalize the name of the resource with proxi (
-the peptide atlas example). Different resources can have their own web service and representation to access to their data and PROXI can be another view of these resources.
-The structure (<strong>resource/proxi/</strong>) allows an standardized url that will highlight to the end end-user that they are using the PROXI view and API of the resource. </br></br></p>
+<p>The first element of the URL is, of course, the location of the web service. The resource could have they own name, for best practice we suggest to finalize the name of the resource with proxi. Different resources can have their own web service and representation to access to their data and PROXI
+can be another view of these resources. The structure (<strong>resource/proxi/</strong>) allows an standardized url that will highlight to the end end-user that they are using the PROXI view and API of the resource. </br></br></p>
 
 <h4>VERSION</h4>
 
@@ -234,13 +235,13 @@ this purpose. With time, more versions might exist. The possible values for this
 <td></td>
 <td> v1.0          </td>
 <td></td>
-<td style="text-align:right;"> Build 1.0 of Human database                 </td>
+<td style="text-align:right;"> Version 1.0 of the PROXI API                </td>
 </tr>
 <tr>
 <td></td>
 <td> v2.0          </td>
 <td></td>
-<td style="text-align:right;"> Build 1.0 of Human database                 </td>
+<td style="text-align:right;"> Version 2.0 of the PROXI API                </td>
 </tr>
 <tr>
 <td></td>
@@ -254,9 +255,41 @@ this purpose. With time, more versions might exist. The possible values for this
 
 <p></br></br></p>
 
-<p>For <strong>Aggregated</strong> view all the information is provided from the root of the resource:</p>
+<blockquote>
+   The version system correspond the PROXI API version and not to a database or builds versions. Some databases such as <a href="http://www.peptideatlas.org/builds/">PeptideAtlas</a> are based on builds which are like snapshots of the data
+   related with the reference database used. In those cases we recommended to have different end-points for example: </br>
+     1. www.peptideatlas.org/build1/proxi/v1.0/ </br>
+     2. www.peptidealtas.org/build2/proxi/v1.0/ </br>
+</blockquote>
+
+
+<p></br></br></br></p>
+
+<h2 class="entry-title centered">Protein View</h2>
+
+
+<div class="border"></div>
+
 
 <p></br></p>
+
+<p>The Protein information is mandatory for all resources because PROXI is protein oriented resource. It contains all the protein related information in a given resource. Every protein entry should be unique in the
+repository. For <strong>Protein</strong> view all the information is provided from the root of the resource:</p>
+
+<p></br></p>
+
+<p class="centered">
+<img src="/images/proteinDiagram.png" />
+</p>
+
+
+<p></br></p>
+
+<p>The protein object is composed by three different objects:
+  - <strong>Peptide</strong>: Identified Peptide sequences in the Protein.
+  - <strong>Modification</strong>: All reported modifications for a given Protein sequence.
+  - <strong>Variant</strong>: All reported change in the original sequence.
+</br></p>
 
 <p class="centered">
 <img src="/images/root_url_aggregated.png" />
@@ -265,13 +298,33 @@ this purpose. With time, more versions might exist. The possible values for this
 
 <p></br></p>
 
-<p>For <strong>dataset</strong> view all the information is provided from the root of the resource:</p>
+<p>For <strong>Dataset</strong> view all the information is provided from the root of the resource:</p>
 
 <p></br></p>
 
 <p class="centered">
 <img src="/images/root_url_dataset.png" />
 </p>
+
+
+<p></br></p>
+
+<p></br></br></br></br></p>
+
+<h4 class="entry-title centered">Expression Information</h4>
+
+
+<div class="border"></div>
+
+
+<p></br></p>
+
+<p></br></br></br></br></p>
+
+<h4 class="entry-title centered">Spectrum Information</h4>
+
+
+<div class="border"></div>
 
 
 <p></br></p>
